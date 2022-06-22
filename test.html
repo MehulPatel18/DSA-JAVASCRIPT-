@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT PRACTICE</title>
+    <script type="text/javascript"></script>
+<script>
+
+  function move(){
+
+  let id = null;
+  const elem = document.getElementById("squ3");
+  let pos1=600;
+  let pos2 = 0;
+  let pos3=1100;
+  clearInterval(id);
+  id = setInterval(mvtop, 5);
+  function mvtop() {
+    if (pos1 == 1100) {
+      clearInterval(id);
+      id2 = setInterval(mvright, 5)
+    } else {
+      pos1++;
+      elem.style.left = pos1 + 'px';
+    }
+  }
+  function mvright() {
+    if (pos2 == 350) {
+      clearInterval(id2);
+      id3 = setInterval(mvlft, 5)
+    } else {
+      pos2++;
+      elem.style.top = pos2 + 'px';
+    }
+    function mvlft() {
+    if (pos3 == 600) {
+      clearInterval(id3);
+      
+    } else {
+      pos3--;
+      elem.style.left = pos3 + 'px';
+    }
+  }
+
+  }
+}
+</script>
+    <style>
+        .maindiv {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .square3 {
+            height: 250px;
+            width: 250px;
+            background-color:rgb(146, 223, 216);
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-radius: 150px;
+            
+        }
+    </style>
+</head>
+<body onload="move()">
+    <div class = "maindiv" id = "main_div">
+        <div class="square3" id="squ3"></div>
+    </div>    
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data structures</title>
+</head>
+<body>
+    
+    <script src="single.js"></script>
+    <script>
+        let num = "1999";
+let len = num.length;
+let node = new SigleLinkedList();
+
+for (let i = 0; i < len; i++) {
+    node.push(parseInt(num[i]));
+}
+
+// console.log(node);
+
+reverse(node);
+function reverse (node) {
+    let next = null;
+    let prev = null;
+    let current = node.head;
+    // traverse();
+    
+    while (current != null) {
+        
+        next = current.next;
+        current.next = prev;
+        prev = current
+        current = next;
+    }
+    // return next;
+    console.log(prev);
+}
+traverse();
+function traverse () {
+    let current = node.head;
+    while(current) {
+        console.log(current.next);
+        current = current.next;
+    }
+}
+    </script>
+</body>
+</html>
